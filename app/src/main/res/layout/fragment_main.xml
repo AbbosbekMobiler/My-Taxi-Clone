@@ -1,0 +1,327 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:mapbox="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.MainFragment">
+
+    <com.mapbox.maps.MapView
+        android:id="@+id/mapView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        mapbox:mapbox_cameraTargetLat="41.32356"
+        mapbox:mapbox_cameraTargetLng="69.2971841"
+        mapbox:mapbox_cameraZoom="12.0">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/mapStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginStart="4dp"
+                android:src="@drawable/ic_style_map"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintTop_toTopOf="parent"
+                mapbox:layout_constraintBottom_toBottomOf="parent"
+                mapbox:layout_constraintVertical_bias=".55"
+                mapbox:layout_constraintHorizontal_bias="0.0"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:clickable="true"
+                android:src="@drawable/ic_menu"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="6dp"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintTop_toTopOf="parent"
+                mapbox:layout_constraintBottom_toBottomOf="parent"
+                mapbox:layout_constraintVertical_bias="0.0"
+                mapbox:layout_constraintHorizontal_bias="0.0"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnNotification"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:focusable="true"
+                android:clickable="true"
+                android:src="@drawable/ic_notification"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginEnd="4dp"
+                android:layout_marginTop="6dp"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintTop_toTopOf="parent"
+                mapbox:layout_constraintBottom_toBottomOf="parent"
+                mapbox:layout_constraintVertical_bias="0.0"
+                mapbox:layout_constraintHorizontal_bias="1.0"/>
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnZoomIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_zoomin"
+                android:focusable="true"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginEnd="4dp"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintTop_toTopOf="parent"
+                mapbox:layout_constraintBottom_toBottomOf="parent"
+                mapbox:layout_constraintVertical_bias=".6"
+                mapbox:layout_constraintHorizontal_bias="1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnZoomOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_zoomout"
+                android:focusable="true"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginEnd="4dp"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintTop_toTopOf="parent"
+                mapbox:layout_constraintBottom_toBottomOf="parent"
+                mapbox:layout_constraintVertical_bias=".7"
+                mapbox:layout_constraintHorizontal_bias="1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/btnMyLocation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/btn_my_location_normal"
+                android:focusable="true"
+                android:clickable="true"
+                android:foreground="?attr/selectableItemBackgroundBorderless"
+                android:layout_marginEnd="4dp"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintTop_toTopOf="parent"
+                mapbox:layout_constraintBottom_toBottomOf="parent"
+                mapbox:layout_constraintVertical_bias=".8"
+                mapbox:layout_constraintHorizontal_bias="1" />
+
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="200dp"
+                android:layout_height="45dp"
+                mapbox:cardCornerRadius="8dp"
+                mapbox:cardBackgroundColor="#ffffff"
+                mapbox:layout_constraintEnd_toStartOf="@id/btnNotification"
+                mapbox:layout_constraintStart_toEndOf="@id/btnMenu"
+                mapbox:layout_constraintBottom_toBottomOf="@id/btnMenu"
+                android:layout_marginBottom="4dp">
+                
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:background="@color/colorAccent"
+                    android:weightSum="2">
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/green">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Свободен"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="#fff"
+                            android:textSize="16sp"/>
+
+                    </FrameLayout>
+                    <FrameLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@color/colorAccent">
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Занят"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/roboto_regular"
+                            android:textColor="@color/dark_gray"
+                            android:textSize="16sp"/>
+
+                    </FrameLayout>
+                </LinearLayout>
+                
+            </androidx.cardview.widget.CardView>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:orientation="horizontal"
+                android:background="@android:color/transparent"
+                android:weightSum="6"
+                mapbox:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clBordyur"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    mapbox:layout_constraintStart_toStartOf="parent"
+                    mapbox:layout_constraintEnd_toEndOf="parent"
+                    mapbox:layout_constraintTop_toTopOf="parent"
+                    mapbox:layout_constraintBottom_toBottomOf="parent">
+
+                    <FrameLayout
+                        android:id="@+id/flBordyur"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        mapbox:layout_constraintStart_toStartOf="parent"
+                        mapbox:layout_constraintEnd_toEndOf="parent"
+                        mapbox:layout_constraintTop_toTopOf="parent"
+                        android:background="@drawable/gradient_bg">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_rocket"
+                            android:layout_gravity="center"/>
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Бордюр"
+                        android:textSize="14sp"
+                        android:textColor="@color/textColor"
+                        android:fontFamily="@font/roboto_medium"
+                        mapbox:layout_constraintStart_toStartOf="parent"
+                        mapbox:layout_constraintEnd_toEndOf="parent"
+                        mapbox:layout_constraintBottom_toBottomOf="parent"
+                        mapbox:layout_constraintTop_toBottomOf="@id/flBordyur"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clOrder"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    mapbox:layout_constraintStart_toStartOf="parent"
+                    mapbox:layout_constraintTop_toTopOf="parent"
+                    mapbox:layout_constraintBottom_toBottomOf="@id/clBordyur"
+                    mapbox:layout_constraintEnd_toStartOf="@id/clBordyur">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cardOrder"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        mapbox:cardBackgroundColor="@color/red"
+                        mapbox:cardCornerRadius="10dp"
+                        android:visibility="invisible"
+                        mapbox:layout_constraintEnd_toEndOf="parent"
+                        mapbox:layout_constraintStart_toStartOf="parent"
+                        mapbox:layout_constraintHorizontal_bias=".7"
+                        mapbox:layout_constraintTop_toTopOf="parent"
+                        mapbox:layout_constraintBottom_toBottomOf="parent"
+                        mapbox:layout_constraintVertical_bias="0">
+                        <FrameLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+                            <TextView
+                                android:id="@+id/tvOrder"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:text="1"
+                                android:fontFamily="@font/roboto_bold"
+                                android:gravity="center"
+                                android:layout_gravity="center"
+                                android:textColor="@android:color/white"/>
+                        </FrameLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <FrameLayout
+                        android:id="@+id/flOrder"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        mapbox:layout_constraintStart_toStartOf="parent"
+                        mapbox:layout_constraintEnd_toEndOf="parent"
+                        mapbox:layout_constraintTop_toTopOf="parent"
+                        mapbox:layout_constraintBottom_toBottomOf="parent"
+                        mapbox:layout_constraintVertical_bias=".2"
+                        android:background="@drawable/gradient_bg">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_exchange"
+                            android:layout_gravity="center"/>
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Зазказы"
+                        android:textSize="14sp"
+                        android:textColor="@color/textColor"
+                        android:fontFamily="@font/roboto_medium"
+                        mapbox:layout_constraintStart_toStartOf="parent"
+                        mapbox:layout_constraintEnd_toEndOf="parent"
+                        mapbox:layout_constraintBottom_toBottomOf="parent"
+                        mapbox:layout_constraintTop_toBottomOf="@id/flOrder"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clTariff"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    mapbox:layout_constraintEnd_toEndOf="parent"
+                    mapbox:layout_constraintTop_toTopOf="parent"
+                    mapbox:layout_constraintBottom_toBottomOf="parent"
+                    mapbox:layout_constraintStart_toEndOf="@id/clBordyur">
+
+                    <FrameLayout
+                        android:id="@+id/flTariff"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        mapbox:layout_constraintStart_toStartOf="parent"
+                        mapbox:layout_constraintEnd_toEndOf="parent"
+                        mapbox:layout_constraintTop_toTopOf="parent"
+                        android:background="@drawable/gradient_bg">
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:src="@drawable/ic_tarif"
+                            android:layout_gravity="center"/>
+                    </FrameLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Тарифы"
+                        android:textSize="14sp"
+                        android:textColor="@color/textColor"
+                        android:fontFamily="@font/roboto_medium"
+                        mapbox:layout_constraintStart_toStartOf="parent"
+                        mapbox:layout_constraintEnd_toEndOf="parent"
+                        mapbox:layout_constraintBottom_toBottomOf="parent"
+                        mapbox:layout_constraintTop_toBottomOf="@id/flTariff"/>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.mapbox.maps.MapView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
